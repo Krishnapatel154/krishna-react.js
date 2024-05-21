@@ -1,0 +1,12 @@
+#post {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+#post h3 {
+    margin-top: 5px;
+    color: #666;
+  }
+  
+  
