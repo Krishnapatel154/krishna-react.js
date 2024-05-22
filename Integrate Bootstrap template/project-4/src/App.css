@@ -1,0 +1,14 @@
+#card
+{
+  display: flex;
+  margin: auto;
+  margin-top:100px;
+  border: 1px solid black;
+  height:250px;
+  width: 550px;
+ padding: 20px;
+ text-align: center;
+ background-color: lightpink;
+}
+
+
