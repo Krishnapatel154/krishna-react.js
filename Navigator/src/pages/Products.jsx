@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
@@ -8,12 +9,11 @@ const Products = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setData(data);
-        setLoading(false);  
+    axios.get("https://fakestoreapi.com/products")
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+        setLoading(false);
       })
       .catch((err) => {
         console.error(err);
@@ -26,21 +26,18 @@ const Products = () => {
       {data.map((el) => (
         <Link to={`/project/${el.id}`} key={el.id}>
           <Card style={{ width: '18rem', }} id='card'>
-      <Card.Img variant="top" src={el.image} alt={el.title} style={{ height: "200px", width: "200px", margin: "20px" }} />
-      <Card.Body>
-        <Card.Title>{el.title}</Card.Title>
-        <Card.Text>
-        {el.price}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+            <Card.Img variant="top" src={el.image} alt={el.title} style={{ height: "200px", width: "200px", margin: "20px" }} />
+            <Card.Body>
+              <Card.Title>{el.title}</Card.Title>
+              <Card.Text>
+                {el.price}
+              </Card.Text>
+            </Card.Body>
+          </Card>
         </Link>
       ))}
-      
     </div>
   );
 }
 
 export default Products;
-
-// t

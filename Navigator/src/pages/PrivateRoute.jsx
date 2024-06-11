@@ -4,7 +4,7 @@
        
         const token=localStorage.getItem("token")
          if(!token){
-            alert("you are not login")
+            alert("You are not login")
        return   <Navigate to={"/login"} />
             
            

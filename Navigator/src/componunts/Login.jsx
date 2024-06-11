@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import banner6 from "../asset/img1.avif"
+import banner6 from "../asset/img1.avif";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,8 +19,12 @@ const Login = () => {
       .then((res) => res.json())
       .then((data) => {
         localStorage.setItem("token", data.token);
+        alert("login successfully.....")
       })
-      .catch((err) => console.log(err));
+      .catch((err) =>{
+        console.log(err)
+      
+      });
   };
 
   return (
